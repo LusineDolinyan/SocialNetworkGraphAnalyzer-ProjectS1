@@ -1,0 +1,27 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.swp
+*.swo
+*.bak
+
+# Virtual environment
+.venv/
+venv/
+ENV/
+env/
+env.bak/
+*.env
+
+# PyCharm
+.idea/
+*.iml
+
+# Byte-compiled / cache
+*.pyc
+
+# OS
+.DS_Store
+Thumbs.db
