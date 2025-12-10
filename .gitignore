@@ -1,27 +1,18 @@
 # Python
 __pycache__/
-*.py[cod]
+*.pyc
 *.pyo
 *.pyd
-*.swp
-*.swo
-*.bak
-
-# Virtual environment
-.venv/
-venv/
-ENV/
-env/
-env.bak/
 *.env
-
-# PyCharm
+*.venv
+env/
+venv/
 .idea/
 *.iml
-
-# Byte-compiled / cache
-*.pyc
 
 # OS
 .DS_Store
 Thumbs.db
+
+# PyCharm
+*.idea/
