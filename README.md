@@ -23,4 +23,4 @@ g.add_user("Kate")
 g.add_user("John")
 g.add_friend("Kate", "John")
 
-print(g.get_friends("Kate"))
+print(g.get_friends("Kate"))"# SocialNetworkGraphAnalyzer-ProjectS1" 
