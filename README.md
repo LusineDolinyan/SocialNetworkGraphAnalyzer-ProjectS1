@@ -1,73 +1,83 @@
-SocialNetworkGraphAnalyzer
+# SocialNetworkGraphAnalyzer-ProjectS1
 
-A simple Python project to explore social networks with friend connections, mutual friends, shortest paths, and friend recommendations.
+A convenient social network graph analyzer for coursework and real projects:
 
-Features
+- Manage users and friendships
+- Compute mutual friends
+- Recommend new friends
+- Find shortest paths between users
+- Designed for demonstration and analysis of social graphs
 
-Add and remove users and friendships.
+---
 
-Get a list of friends for any user.
+## Features
 
-Find mutual friends between users.
+- Add/remove users and friendships
+- Query friends of any user
+- Compute common friends between users
+- Recommend friends based on network connections
+- Compute shortest path between users in the social graph
+- Easy-to-use Python API
 
-Compute shortest paths in the network.
+---
 
-Recommend new friends based on network connections.
+## Installation
 
-Clean and modular API ready for extensions.
+Make sure you have Python 3.x installed.
 
-Install
-# Clone the repository
+Clone the repository:
+
+```bash
 git clone https://github.com/LusineDolinyan/SocialNetworkGraphAnalyzer-ProjectS1.git
 cd SocialNetworkGraphAnalyzer-ProjectS1
 
-# Optional: create virtual environment
-python -m venv venv
-source venv/Scripts/activate      # Windows: venv\Scripts\activate
-pip install -r requirements.txt  # if any dependencies
+(Optional) Create a virtual environment:
 
-
-# Optional: create virtual environment
 python -m venv venv
-source venv/Scripts/activate      # Windows: venv\Scripts\activate
-pip install -r requirements.txt  # if any dependencies
+source venv/Scripts/activate  # Windows
+
+Install dependencies (if any):
+
+pip install -r requirements.txt
+
 
 Quickstart
 
 from SocialNetworkGraphAnalyzer.algorithms import common_friends, shortest_path, recommend_friends
-from SocialNetworkGraphAnalyzer.main import SocialGraph
+from SocialNetworkGraphAnalyzer.graph import SocialGraph
 
+# Initialize graph
 g = SocialGraph()
 g.add_user("Kate")
 g.add_user("John")
 g.add_user("Jake")
 
+# Add friendships
 g.add_friend("Kate", "Jake")
 g.add_friend("Kate", "John")
 
+# Show friends
 print("Kate's Friends:", g.get_friends("Kate"))
 print("John's Friends:", g.get_friends("John"))
 print("Jake's Friends:", g.get_friends("Jake"))
 
+# Remove friendship
 g.remove_friend("Kate", "John")
+print("\nAfter deleting the Kate-John friendship:")
+print("Kate's Friends:", g.get_friends("Kate"))
+print("John's Friends:", g.get_friends("John"))
+
+# Mutual friends
 print("Mutual friends of Kate and Jake:", common_friends(g, "Kate", "Jake"))
+
+# Add another friendship
+g.add_friend("Jake", "John")
+
+# Shortest path
 print("Shortest path Kate→John:", shortest_path(g, "Kate", "John"))
+
+# Friend recommendations
 print("Recommendations for John:", recommend_friends(g, "John"))
 
-Why this is convenient
 
-Demonstrates core graph algorithms in a social network context.
 
-Modular code: algorithms.py separate from main.py.
-
-Easy to extend with more features like network metrics or visualizations.
-
-Perfect for coursework and showcasing real-time demonstration on oral defense.
-
-About
-
-ProjectS1 assignment for Social Network Graph Analyzer.
-
-Resources
-
-GitHub Repository: SocialNetworkGraphAnalyzer-ProjectS1
