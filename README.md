@@ -1,48 +1,42 @@
 # SocialNetworkGraphAnalyzer-ProjectS1
 
-A convenient social network graph analyzer for coursework and real projects:
-
-- Manage users and friendships
-- Compute mutual friends
-- Recommend new friends
-- Find shortest paths between users
-- Designed for demonstration and analysis of social graphs
+A Python project for analyzing social networks: managing friendships, finding mutual friends, computing shortest paths, and recommending friends. This project is designed for coursework and demonstrates working functionalities in real-time.
 
 ---
 
-## Features
+## Table of Contents
+1. [Overview](#overview)  
+2. [Installation](#installation)  
+3. [Quickstart](#quickstart)  
+4. [Features](#features)  
+5. [Project Structure](#project-structure)  
+6. [License](#license)  
 
-- Add/remove users and friendships
-- Query friends of any user
-- Compute common friends between users
-- Recommend friends based on network connections
-- Compute shortest path between users in the social graph
-- Easy-to-use Python API
+---
+
+## Overview
+
+This project allows users to:  
+- Add and remove users and friendships.  
+- Get a list of mutual friends.  
+- Compute the shortest path between any two users.  
+- Recommend friends based on existing connections.  
+
+It is implemented in Python and uses modular code to separate algorithms from the main application logic.
 
 ---
 
 ## Installation
 
-Make sure you have Python 3.x installed.
-
-Clone the repository:
+### 1. Clone the repository
 
 ```bash
 git clone https://github.com/LusineDolinyan/SocialNetworkGraphAnalyzer-ProjectS1.git
 cd SocialNetworkGraphAnalyzer-ProjectS1
 
-(Optional) Create a virtual environment:
 
-python -m venv venv
-source venv/Scripts/activate  # Windows
-
-Install dependencies (if any):
-
-pip install -r requirements.txt
-
-
-Quickstart
-
+```
+## Quickstart
 from SocialNetworkGraphAnalyzer.algorithms import common_friends, shortest_path, recommend_friends
 from SocialNetworkGraphAnalyzer.graph import SocialGraph
 
@@ -79,5 +73,21 @@ print("Shortest path Kate→John:", shortest_path(g, "Kate", "John"))
 # Friend recommendations
 print("Recommendations for John:", recommend_friends(g, "John"))
 
+---
+## Example Output
 
+Initial friends:
+Kate: ['Jake', 'John']
+John: ['Kate']
+Jake: ['Kate']
+
+After removing Kate-John friendship:
+Kate: ['Jake']
+John: []
+
+Mutual friends of Kate and Jake: []
+
+Shortest path Kate→John: ['Kate', 'Jake', 'John']
+
+Friend recommendations for John: ['Kate']
 
