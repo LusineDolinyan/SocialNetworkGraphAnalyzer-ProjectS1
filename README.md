@@ -25,3 +25,4 @@ g.add_friend("Kate", "John")
 
 print(g.get_friends("Kate"))"# SocialNetworkGraphAnalyzer-ProjectS1" 
 "# SocialNetworkGraphAnalyzer-ProjectS1" 
+"# SocialNetworkGraphAnalyzer-ProjectS1" 
