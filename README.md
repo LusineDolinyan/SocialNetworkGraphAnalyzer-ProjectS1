@@ -1,73 +1,96 @@
-# SocialNetworkGraphAnalyzer-ProjectS1
+# SocialNetworkGraphAnalyzer
 
-A Python project for analyzing social networks: managing friendships, finding mutual friends, computing shortest paths, and recommending friends. This project is designed for coursework and demonstrates working functionalities in real-time.
+Analyze social networks with user connections, mutual friends, shortest paths, and friend recommendations.
+A clean and lightweight educational project for ProjectS1.
 
----
+## Features
 
-## Table of Contents
-1. [Overview](#overview)  
-2. [Installation](#installation)  
-3. [Quickstart](#quickstart)  
-4. [Features](#features)  
-5. [Project Structure](#project-structure)  
-6. [License](#license)  
+- Add/remove users
+- Add/remove friendships
+- Get a user's friends
+- Mutual friends
+- Shortest path between users
+- Friend recommendations
+- Simple graph-based API
 
----
-
-## Overview
-
-This project allows users to:  
-- Add and remove users and friendships.  
-- Get a list of mutual friends.  
-- Compute the shortest path between any two users.  
-- Recommend friends based on existing connections.  
-
-It is implemented in Python and uses modular code to separate algorithms from the main application logic.
 
 ---
 
 ## Installation
 
-### 1. Clone the repository
-
 ```bash
 git clone https://github.com/LusineDolinyan/SocialNetworkGraphAnalyzer-ProjectS1.git
 cd SocialNetworkGraphAnalyzer-ProjectS1
-
-
 ```
-## Quickstart
-from SocialNetworkGraphAnalyzer.algorithms import common_friends, shortest_path, recommend_friends
+
+(Optional) create a virtual environment:
+
+```bash
+python -m venv venv
+# Windows
+venv\Scripts\activate
+# macOS / Linux
+source venv/bin/activate
+```
+
+
+Install dependencies:
+
+```bash
+pip install -r requirements.txt
+```
+
+---
+
+
+## SocialNetwork class
+
+```python
+class SocialNetwork:
+    def __init__(self):
+        self.graph = {}
+    ...
+```
+---
+
+## Quickstart Example
+
+```python
 from SocialNetworkGraphAnalyzer.graph import SocialGraph
+from SocialNetworkGraphAnalyzer.algorithms import common_friends, shortest_path, recommend_friends
 
 g = SocialGraph()
+
 g.add_user("Kate")
 g.add_user("John")
 g.add_user("Jake")
-
 g.add_friend("Kate", "Jake")
 g.add_friend("Kate", "John")
 
-print("Kate's Friends:", g.get_friends("Kate"))
-print("John's Friends:", g.get_friends("John"))
-print("Jake's Friends:", g.get_friends("Jake"))
+print("Kate's friends:", g.get_friends("Kate"))
+...
 
-g.remove_friend("Kate", "John")
-print("\nAfter deleting the Kate-John friendship:")
-print("Kate's Friends:", g.get_friends("Kate"))
-print("John's Friends:", g.get_friends("John"))
 
-print("Mutual friends of Kate and Jake:", common_friends(g, "Kate", "Jake"))
+```
+---
+## Full Demonstration Script
 
-g.add_friend("Jake", "John")
+```python
+from SocialNetworkGraphAnalyzer.graph import SocialGraph
+from SocialNetworkGraphAnalyzer.algorithms import common_friends, shortest_path, recommend_friends
 
-print("Shortest path Kate→John:", shortest_path(g, "Kate", "John"))
+def demo():
+    ...
+if __name__ == "__main__":
+    demo()
 
-print("Recommendations for John:", recommend_friends(g, "John"))
+```
 
 ---
-## Example Output
 
+## Expected Output
+
+```
 Initial friends:
 Kate: ['Jake', 'John']
 John: ['Kate']
@@ -82,4 +105,15 @@ Mutual friends of Kate and Jake: []
 Shortest path Kate→John: ['Kate', 'Jake', 'John']
 
 Friend recommendations for John: ['Kate']
+```
+
+---
+
+
+
+
+
+
+
+
 
