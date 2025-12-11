@@ -109,6 +109,14 @@ Friend recommendations for John: ['Kate']
 
 ---
 
+## Why This is Convenient
+
+- Easy to manage social networks with simple API.
+- Quickly see mutual friends, shortest paths, and friend recommendations.
+- Minimal setup — just clone, install dependencies, and run.
+- Demonstrates graph algorithms in action.
+- Ideal for learning or coursework projects.
+
 
 
 
